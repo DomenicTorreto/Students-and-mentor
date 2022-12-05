@@ -8,9 +8,7 @@ class Student:
         self.grades = {}
 
     def __average_grade(self):
-        grades = []
-        for rating in self.grades.values():
-            grades += rating
+        grades = sum(self.grades.values(), [])
         return sum(grades) / len(grades)
 
     def __str__(self):
@@ -74,9 +72,7 @@ class Lector(Mentor):
         return ""
 
     def __average_rating(self):
-        rating_list = []
-        for rating in self.lector_rating.values():
-            rating_list += rating
+        rating_list = sum(self.lector_rating.values(), [])
         return sum(rating_list) / len(rating_list)
 
     def __lt__(self, other):
